@@ -21,5 +21,7 @@ class Car {
   }
 }
 
-let car1 = new Car ("Toyota", "Corolla", "Red")
+let car1 = new Car ("Toyota", "Corolla")
 let car2 = new Car ("Honda", "Civic", "Blue")
+
+
