@@ -11,9 +11,12 @@ let car1 = {
 
 // Object.keys
 // Reference: https://www.w3schools.com/jsref/jsref_object_keys.asp
+console.log (car1)
+console.log (Object.keys(car1))
 
 // Object.values
 // Reference: https://www.w3schools.com/jsref/jsref_object_values.asp
+console.log (Object.values(car1))
 
 // Using for...in Loop, for (key in car1)
 // Reference: https://www.w3schools.com/js/js_loop_forin.asp
