@@ -6,7 +6,8 @@
     ElectricCar (brand, model, color, batteryLevel)
     SportCar (brand, model, color, topSpeed)
     LuxuryCar (brand, model, color, soundSystem)
-    Override mothods
+    - Override methods
+    - Overloading methods
 */
 
 class Car {
@@ -28,6 +29,12 @@ class ElectricCar extends Car {
     super (brand, model, color)
     this.batteryLevel = batteryLevel
   }
+  drive() {
+    console.log ("This is overriding the drive method")
+  }
+  stop(speed) {
+    return `The ElectricCar of ${this.brand}, with model ${this.model} stopped with speed of ${speed}`
+  }
 }
 
 class SportCar extends Car {
@@ -44,7 +51,10 @@ class LuxuryCar extends Car{
   }
 }
 
-let car1 = new Car ("brand1", "Model1", "Color1")
-let electicCar1 = new ElectricCar ("ECBrand1", "ECModel1", "ECColor1", "ECBatteryLevel1")
-console.log (electicCar1)
 
+let electicCar1 = new ElectricCar ("ECBrand1", "ECModel1", "ECColor1", "ECBatteryLevel1")
+
+console.log (electicCar1)
+console.log (electicCar1.drive())
+console.log (electicCar1.stop("0"))
+// override
