@@ -16,13 +16,6 @@ class Car {
     this._model = value
   }
 
-  get color() {
-    return this.color
-  }
-
-  set color (value) {
-    this.color = value
-  }
 }
 
 

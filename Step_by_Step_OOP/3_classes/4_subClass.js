@@ -6,8 +6,7 @@
     ElectricCar (brand, model, color, batteryLevel)
     SportCar (brand, model, color, topSpeed)
     LuxuryCar (brand, model, color, soundSystem)
-    - Override methods
-    - Overloading methods
+    - Override/Overloading methods
 */
 
 class Car {
@@ -22,6 +21,7 @@ class Car {
   stop() {
     console.log (`Car class: ${this.brand}, ${this.model}, ${this.color} has stopped`)
   }
+
 }
 
 class ElectricCar extends Car {
@@ -29,32 +29,33 @@ class ElectricCar extends Car {
     super (brand, model, color)
     this.batteryLevel = batteryLevel
   }
-  drive() {
-    console.log ("This is overriding the drive method")
-  }
-  stop(speed) {
-    return `The ElectricCar of ${this.brand}, with model ${this.model} stopped with speed of ${speed}`
+  checkBatteryLevel() {
+    console.log ("The battery level is checked")
   }
 }
 
 class SportCar extends Car {
   constructor (brand, model, color, topSpeed) {
-    super (brand, model, color)
+    super (brand, color, model)
     this.topSpeed = topSpeed
   }
-}
-
-class LuxuryCar extends Car{
-  constructor (brand, model, color, soundSystem) {
-    super (brand, model, color)
-    this.soundSystem = soundSystem
+  drive() {
+    console.log ("This is an amazing sport Car")
   }
 }
 
+class LuxuryCar extends Car {
+  constructor (brand, model, color, soundSystem) {
+    super (brand, color, model)
+    this.soundSystem = soundSystem
+  }
+  drive(speed) {
+    console.log (`This is an amazing LuxuryCar with the spped of ${speed} `)
+  }
+}
 
-let electicCar1 = new ElectricCar ("ECBrand1", "ECModel1", "ECColor1", "ECBatteryLevel1")
+let ElectricCar1 = new ElectricCar ("ECbrand1", "ECmodel1", "ECcolor1", "ECBatteryLevel1")
+let SCar1 = new SportCar ("SCBrand1", "SCModel1", "SCColor1", "SCSpeed1")
+let LCcar1 = new LuxuryCar("LCBrand1", "LCModel1", "LcColor1", "LCSound1")
+LCcar1.drive(200)
 
-console.log (electicCar1)
-console.log (electicCar1.drive())
-console.log (electicCar1.stop("0"))
-// override
